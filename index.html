@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Karnataka | One State, Many Worlds</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo"><i class="fa-solid fa-archway"></i> Namma<span>Karnataka</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#history">Historical Places</a></li>
+      <li><a href="#waterfalls">Waterfalls</a></li>
+      <li><a href="#hills">Hill Stations</a></li>
+      <li><a href="#food">Cuisine</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#travel-info">Travel Info</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="badge">Welcome to South India's Gem</span>
+      <h1>One State. <span>Many Worlds.</span></h1>
+      <p>Discover ancient UNESCO heritage sites, misty coffee hills, roaring waterfalls, and serene coastal beaches.</p>
+      
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search Hampi, Coorg, Mysore, Jog Falls..." />
+        <button id="searchBtn">Explore</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Tourist Destinations -->
+  <section class="section container" id="destinations">
+    <div class="section-title">
+      <h2>Top Tourist Destinations</h2>
+      <p>Must-visit flagship spots across Karnataka</p>
+    </div>
+    <div class="grid-container" id="destinationsGrid">
+      <div class="card" data-name="mysore palace heritage south">
+        <div class="card-img">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg4Ortp18DYITxvs3cwnNcNI1D5pzCyuE5eqioOxcTg&s=10" alt="Mysore Palace">
+          <span class="card-tag">Heritage</span>
+        </div>
+        <div class="card-body">
+          <h3>Mysore Palace</h3>
+          <p>The magnificent seat of the Wodeyar dynasty, world-famous for its illuminated grandeur.</p>
+          <div class="card-footer">
+            <span><i class="fa-solid fa-location-dot"></i> Mysuru</span>
+            <button class="detail-btn" onclick="openModal('Mysore Palace', 'Built in 1912, Mysore Palace is an Indo-Saracenic architectural masterpiece. Every Sunday evening and during Dasara, over 97,000 bulbs illuminate the structure.', 'October to March', 'Train from Bengaluru (2.5 hrs)')">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="gokarna beach coast west">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&fit=crop&w=800&q=80" alt="Gokarna Beach">
+          <span class="card-tag">Coastal</span>
+        </div>
+        <div class="card-body">
+          <h3>Gokarna Beaches</h3>
+          <p>Pristine Om Beach and Kudle Beach offering golden sands and cliffside trekking trails.</p>
+          <div class="card-footer">
+            <span><i class="fa-solid fa-location-dot"></i> Uttara Kannada</span>
+            <button class="detail-btn" onclick="openModal('Gokarna', 'A serene coastal town famous for Om Beach shaped like the sacred symbol, Mahabaleshwar Temple, and beach trekking trails.', 'November to February', 'Direct bus/train to Gokarna Road station')">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="badami cave temples heritage north">
+        <div class="card-img">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaBbRnG8lw690jDhLhxPdMEkULCfhurK4vTwjVjLTUPQ&s=10" alt="Badami Caves">
+          <span class="card-tag">Rock Architecture</span>
+        </div>
+        <div class="card-body">
+          <h3>Badami Cave Temples</h3>
+          <p>Sixth-century rock-cut temples carved out of red sandstone cliffs by the Chalukyas.</p>
+          <div class="card-footer">
+            <span><i class="fa-solid fa-location-dot"></i> Bagalkot</span>
+            <button class="detail-btn" onclick="openModal('Badami Caves', 'Four ancient rock-cut cave temples showcasing Vedic, Jain, and Buddhist iconography overlooking Agastya Lake.', 'October to March', 'Hubballi Airport (105 km) or train to Badami')">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historical Places -->
+  <section class="section bg-light" id="history">
+    <div class="container">
+      <div class="section-title">
+        <h2>Historical Landmarks</h2>
+        <p>Step back in time through centuries of royal Indian heritage</p>
+      </div>
+      <div class="grid-container">
+        <div class="card" data-name="hampi ruins unesco ruined city">
+          <div class="card-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRrYdQjvx_WJFORH702tQfeXWKM2WNtvdgCqBV-t5HsQ&s=10" alt="Hampi Ruins">
+            <span class="card-tag">UNESCO Site</span>
+          </div>
+          <div class="card-body">
+            <h3>Hampi Monoliths</h3>
+            <p>Capital of the Vijayanagara Empire featuring Stone Chariots and sprawling temple ruins.</p>
+            <div class="card-footer">
+              <span><i class="fa-solid fa-location-dot"></i> Vijayanagara</span>
+              <button class="detail-btn" onclick="openModal('Hampi', 'UNESCO World Heritage site with over 1,600 surviving monuments, stone chariots, and boulder-strewn landscapes along the Tungabhadra River.', 'November to February', 'Overnight train to Hosapete (13 km away)')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-name="gol gumbaz bijapur dome architecture">
+          <div class="card-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUallQMNi7bZUAdVQp_CydgmHg8QQmpi1xHZrhERoWPw&s=10" alt="Gol Gumbaz">
+            <span class="card-tag">Sultanate Era</span>
+          </div>
+          <div class="card-body">
+            <h3>Gol Gumbaz</h3>
+            <p>Mausoleum of Mohammed Adil Shah with the world's second-largest acoustic whispering gallery dome.</p>
+            <div class="card-footer">
+              <span><i class="fa-solid fa-location-dot"></i> Vijayapura</span>
+              <button class="detail-btn" onclick="openModal('Gol Gumbaz', 'Famous for its massive acoustic dome where even a soft whisper echoes 11 times throughout the circular gallery chamber.', 'October to March', 'Direct trains available to Vijayapura Railway Station')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-name="belur halebidu hoysala architecture">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1620766182966-c6eb5ed2b788?auto=format&fit=crop&w=800&q=80" alt="Belur Chennakeshava Temple">
+            <span class="card-tag">Hoysala Art</span>
+          </div>
+          <div class="card-body">
+            <h3>Belur & Halebidu</h3>
+            <p>12th-century stone carvings and complex star-shaped Hoysala temple structures.</p>
+            <div class="card-footer">
+              <span><i class="fa-solid fa-location-dot"></i> Hassan</span>
+              <button class="detail-btn" onclick="openModal('Belur & Halebidu', 'Twin temple towns famous for intricate soapstone carvings of celestial dancers, mythology, and intricate outer wall friezes.', 'October to March', '4-hour drive (220 km) from Bengaluru')">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waterfalls -->
+  <section class="section container" id="waterfalls">
+    <div class="section-title">
+      <h2>Majestic Waterfalls</h2>
+      <p>Experience Western Ghats' cascading natural spectacles</p>
+    </div>
+    <div class="grid-container">
+      <div class="card" data-name="jog falls shimoga plunges waterfall">
+        <div class="card-img">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-oC923XtStjQ993TMmIFx2xiZmPKqsqsbFA1E24sA_Q&s=10" alt="Jog Falls">
+          <span class="card-tag">253m Drop</span>
+        </div>
+        <div class="card-body">
+          <h3>Jog Falls</h3>
+          <p>India's second-highest plunge waterfall, formed by the Sharavathi River falling in 4 cascades.</p>
+          <div class="card-footer">
+            <span><i class="fa-solid fa-location-dot"></i> Shivamogga</span>
+            <button class="detail-btn" onclick="openModal('Jog Falls', 'Composed of Raja, Roarer, Rocket, and Rani cascades dropping vertically down 830 feet. Highest water flow occurs right after monsoons.', 'August to December', 'Nearest station Talguppa (18 km)')">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="abbey falls coorg waterfall hill">
+        <div class="card-img">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJJCh5c0veJQwiEKMumOpUuVjtIQNg7Ww-EZFwKsiN8A&s=10" alt="Abbey Falls">
+          <span class="card-tag">Spice Plantation</span>
+        </div>
+        <div class="card-body">
+          <h3>Abbey Falls</h3>
+          <p>Nestled amid private coffee estates and spice plantations near Madikeri town.</p>
+          <div class="card-footer">
+            <span><i class="fa-solid fa-location-dot"></i> Kodagu (Coorg)</span>
+            <button class="detail-btn" onclick="openModal('Abbey Falls', 'A scenic waterfall located inside dense private coffee and pepper plantations with a hanging bridge viewing platform.', 'July to October', '7 km drive from Madikeri town center')">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="shivanasamudra falls kaveri river island">
+        <div class="card-img">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy06YDbss-JlV_9F-oZByCq0IhvwhxERidIzJVS0x2Sw&s=10" alt="Shivanasamudra Falls">
+          <span class="card-tag">Twin Falls</span>
+        </div>
+        <div class="card-body">
+          <h3>Shivanasamudra</h3>
+          <p>The Kaveri River splits into Gaganachukki and Bharachukki falls in a lush island valley.</p>
+          <div class="card-footer">
+            <span><i class="fa-solid fa-location-dot"></i> Chamarajanagar</span>
+            <button class="detail-btn" onclick="openModal('Shivanasamudra Falls', 'Famous twin waterfalls on the Kaveri river. Also site of Asia’s first hydroelectric power plant built in 1902.', 'July to October', '130 km road journey from Bengaluru')">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hill Stations -->
+  <section class="section bg-light" id="hills">
+    <div class="container">
+      <div class="section-title">
+        <h2>Misty Hill Stations</h2>
+        <p>Cool mountain air, tea gardens, and lush rainforests</p>
+      </div>
+      <div class="grid-container">
+        <div class="card" data-name="coorg madikeri coffee hill station">
+          <div class="card-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRYdL9mP-Kez2lKMqdeGDMkHjkLibiJW7-YSfBc3n8rg&s=10" alt="Coorg Hills">
+            <span class="card-tag">Coffee Capital</span>
+          </div>
+          <div class="card-body">
+            <h3>Coorg (Kodagu)</h3>
+            <p>Rolling green hills, homestays, aromatic coffee plantations, and Kodava culture.</p>
+            <div class="card-footer">
+              <span><i class="fa-solid fa-location-dot"></i> Kodagu</span>
+              <button class="detail-btn" onclick="openModal('Coorg', 'Known as the Scotland of India. Highlights include Raja Seat, Dubare Elephant Camp, Talakaveri, and coffee tasting tours.', 'October to April', 'Drive from Mysuru (120 km) or Bengaluru (265 km)')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-name="chikmagalur peak trekking western ghats">
+          <div class="card-img">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk8BDg4OExETJhUVJk81LTVPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT//AABEIAKAA9gMBIgACEQEDEQH/xAAaAAACAwEBAAAAAAAAAAAAAAAEBQIDBgAB/8QAOxAAAgEDAgQEAgkDAwQDAAAAAQIDAAQREiEFEzFBIlFhcRSBIzJCkaGxwdHwBuHxFTNSU2JygiRDRP/EABkBAAMBAQEAAAAAAAAAAAAAAAECAwAEBf/EACYRAAICAgICAgEFAQAAAAAAAAABAhEDIRIxE0EEUSIUMkJhkXH/2gAMAwEAAhEDEQA/ANjxGwzdW88KooGE64yMbbdO1BcXvG0tbSRvHKrDSsf2vI/fRfHHSGGOWC4WNhJgKcHB9B577ikE1xHKS/OM0iKGBfz6mmQrJGd50xKVkIG2oYKj0NM+HXVvBqjuFbxjYnsPTypRZ3Asn0yIsmSCQTXkba5A5+tnYDrTMU21mkMEK6G8DfUyeg8qLpdbX0fw8RIYMRjGncn2qqK8ujcBZFj0MWC4zvikY9jauyKGachxF4Q57Z/SvYblXOhsK+OhPX+YoBCKhIQsbE9AM7UDxHiJs4iwTV4tO360DJxF9LyvJiMxsCPI6TWA2Lf6fgWbhlzK0hiBuCM9/wCb0zOPj7PMZOXCliCRjBx86H/peIS8AjWVAySOzbjOCDj9KcXKgLbbDKzLj8apJ/kAOGwrq4V1TGOoeSGFo+W4yH7E111K6W8rQDXKo2UDO9ZniPELue5RcLGsexCsPCfesBugniAsYGZrU/SF1DoBnvgjf0Jq1ePry9I0gqcZxt7Um4lJGb1ZI59eVAJI8THH5UFLdwpuCuknxEDrn0/nanpsnyNvbcRjmGqQpEMZGtgCam/EbVM5lDAAEldwc+WKwx5edQbBYeE77+n3VWbhmhdUzhUwN8nP8FDiHmb+W9toV1SSgbavlVUHFbKa35yzBU16Bq2OawkM5JAlZyRkgIwOT50xsCz8QgtplGhDrHN8J6nJz3/tQaoKkarjTAcHuT/2Um/q17mC0SdHkEAChlR8b1Hj3GIZLC5i5WopIug9QcNgnPaknGL7iF/M0RduRkNoOwx+tFVYW9BsdvFxzha/F3Uz3SA6E0DOM9vPO29Z24sLj4dp0t5UiQ8tdf1zp8LH785HrRHDZ5LF9NqSJjtqQDUACcnpsK08dvJdcHUuzvcKeYp0eMd+mMb+fem5UKYqcMsYwMMmNhnAq4ySSvkq2rR4iw6elHXGsSycxWSWQBmaT7JHXal8JIcskhYKfrN3OMjOaVuzHlzbqskScw6ADqAyfvqfD7mHhlyVWFEuFwRrQ7np+NEPwq3isYryW7U3UrENEraVTO3ltipcJt7W5v0h4kUzG/L1h8k4JHXPvR6RqDoEm4nwyRrSLxpOFES4GlQpGc998966tlE3D+G2aLE8ccGcA5zk11DkNRm724g41w6O5TWtwHw0anJ9wO9KI4UWMTjq/Uls5OKK/pmOzw5uS32lDKpHUdT+dWcd4UvDZlFsJGhkXZTkkMDvv60QdlVpEJZy/KDEjGO/fLDPlUJybW7XRNup1Ao2ceY96O/p22Se7IkdSyAlkzkjHQ5+6h+K8pLqQxhHjI1FSN1JHWtYAiwvFkkGsSs7MEDjwge+K0EtwotGJUK+MKGBIwO/50g4MbhGjaGMuBqCnYYJ/M7fjTOW3uLm1WS4BVhlXjJx65z50rCgeS4mhxKSGOwRtjqHnUPjpHmKhFaXIGpNj/P2on/SFaB2DMScFNJ/D0oWXhskYaaC4BRN8asMD3oBDpYGS3UrMhL+LEjbD5n+b0vvXNrY3AKhWkQrkYxuPyqqGVlj6F2z9YtnSO1KJmlZJS+Svck9MCtHbFL7e7uTwu2tA3hjYlQvXqT+9M7W4lm+F5aSczmZ1M3XY0kgQnQ+SFGd+1HRcQaCz5JUOeYJEyfqnv1qjWwm2shcrDi5ZXfzFFZrKcO43BZWWlo3aYtuoOcjzH7U+a8EtnJLZlHdB0JwB71OhkxRxi7aKS4a0mVWOVlGwx6/4rNiRpjl/o/Fs7b/AHedFrdR8VJNzC6kt1iHzJNANpaQgtIxLDGnoDnsKZE3sldcLniB5zpL4dQYtsp/f0oaW3CP8MZQckHIOd6Y8QsZraJZ3GeYmQgbO2e4Hag7dF+JUZJUb5ONx0P6UXJ1o1EZFiVkZ3ZgFxj9a8jaJCy6cwtvknJq0rCi5MQlYtjdtx0/CoyCNyYQdB6lVpbBRUyj4gRwJk41amIC486YiK5jVI7knS4zGWA327eY3FC2r/FHSwRseHKpgoPWm/HuLWTRfDoRK+jSG6jfGem/l99BsNCa4uV/06SAHWXVlG2NJz+FU8RmKW0avI+NOCWPSq7oYtTNIDlEyNWxY+uelNOLQpBwmNbpQ8jAIhY6dSDfI+/5VkH0LOGzXHxKzGTSkYyNGxwf802vuKp8FFAkLW5UgBs4JOOuaRQBmYmGCQ6BpDDcHtk0PLHPbTl5Pp40AYup8Kk9s53FO9mGFzcZZVdgT2OBk0PFMI3uSRgad205Kg9x61C5ujpEU8DEMBp5YxqFeIyxyyqwYQyW+xG5VgcEj76VKg9nXB4ktnHJywYJtTEMcBWzuQPU4o7+kOFRcZLtcOymNtRfUCG9CPPeheFLLqk5c5kRo9LFt8HzwaZQfCW1tHb2sRiuFy00xzhj1zRckjDXil61hxKS2iEjWoA0pGSNJ/hrqRG4aR9dyxRuyDIx711S5ADuCb3b2EkSFZx4i6kHA8j2OM0x41LKQkfw7kRy6RLqJLbac49cis8OZBIzCQjxYGO3v6VfLfzRARoxZWkVz5Fg2fu2qqYQyM31tdO6gqwRQdONxjFCxyh3JkcsRtluhxRJvJY7l7h1YLcJrOFC5bHh2z0yeoz0q264cLvh1vc2rIg0AOCSN+pbp02NBozL+DzpBPjBwU6K2V152PpWkguluoGSaPSw3JLYGDtnNY61EyPgyYPTA7+lE3s80MrQatcfdh0zScqNdD8T2+prn4gNIq8tI1YEA/qaX3bGOUtEpdohpfUNlPX+e1KEZSyrjUBlshsEeoq93QtyZJgx05wTkUjmbkdrCgsvibfqelVzzwtw+TSmGY5O++22ParXiTTqYjQOwHSgLiIJkoSyaSck9PSjjkmwaPbWcNZRRiPDAnfPXNXvIjW0gDxKMglWG+TjoaXwN9Eqk4OMj76unl1MwAAwwHh74AFWvdDBl9DEsi8lByFTSW1dW/vvt602sIfi+FyWtpK8MxbxF9ts9CPalfDzCHhSa6DRmQ5XTjA7bn9K09nPYQz6FbDPhhn7Jx51mwC7hnAzb4iuondyGXm68e5wN8EUm43b8PtpWgiSVZYyoC74wNyfc1ffcVvo+IvHBNETG5EZDEmh7ziC3jRzzoA6faVfr48/52pZOgNoI+GnktJHllUoseYzqyMY7Y7+lCtCgt7OaRQrXBYMQDkZx18/L517dTPJDK1rqaWUYwDjOeu3yqgTTf6ELcMsTmRcKc6uo/DIU/KtFhRbexRwxpNE0WjGSQ/iLb526/w0DcThZgBGPCp6jcZGwq28W2awzGpE2MlidtXf5YqsxR6EWLPN0cx2bo3lj7j+FBrZqPJI5I1R0kZXfbGOvtXskHJ3uQWZtlKtnerEV5XKIp5mMkuMYx/BXtvKwGXLPIzDTEFyx9fwpJWBoHvbe8j4W89zE8cJZPrEHfzphxK35VmbwyTNK0mPqYA279s+WOtDcT4q91whrWSLWATpbcHbrnv1zS+S802vK1FCxDBATjYYGPXv86eKaD0MYbiCAQlY5kONMjEBuvfbocnv5UJLcIrGOfBDR58Bz133pebsyMx1uVQb77jfNeQ2uu4eKS4MWtG5ZxtJg9Pc1ThYLJSESxqluCwwW32A9vP2FGSw8wxqDHk5XSpP2tsUvmdlVUlcROh0vD10Y/WvLe5maUqGYfbXUd9j0HptWcQrsY8OnjRFtxqyrYxnc+opoiR3FyWaXSNJORv0Gfw+VJrtlSQ3MIYJdKJEYefcelE20pl4XC8mQTOV6b5xU3GtmPLhDMqlkfBz9ZQ2469D611FJ/8ALgjmVlTTlCpI/KupOa+hbJtbW0NvJLLchlOAxON/MjuapntYLomVLg4IxgLtQhZJ7VY9D+YXT4m/vV0FsEBM7FdSYKKuBnt65otsHJhZw6DTrMSj6530+wrwyiGEm4mOobAxjOM0AWZg0Vtd6wr/AFW7bb4Pf7qDuZbhoJdKyqnUE53GfP3xWUeXsw1e/hb6sjaugTHX1FWJMGcTSSSRj6pVgfCaS2sds8anmFZRgk4Ph/frRU/xsbEvqdVGRKq7EftTcEAPRkZHjumEbK2YynUjOOlXyaEYaY1OASMdd/P/ADSr4xmjQSMkjP8A8uoHkKmtzI1yXZQV0+HB2J9hUuJgz4kyqX5oJTwspG3t/PSomQSrIhHhVcqGOP8ANCpMzzM0eIpG32wfb50Q8ztbmK7jIBBIPn6j9q1V0Fdk4WhNsshb6TfC7DVg1441wAqrsE8TZ6r5ChIlIwSRpGOu29Fu6tJKdWnKjBX9c07T5D+yUkXLGldyPMY+VepxG4t1A2OfskZz7+fSqJ5G8fMI1Kcjf86rJDqArjbfpvRVmLbt1l+kTnZB3LDTv1oYSzNMkUTajqwMk/jXsjrHlSC2rG7HtUI2EtwutdOoYGds+W4pr+xQ+O6VkAlOT/yTp71IsLqeHQVKupO57jy+WaX3F6FlMehOWT26Hbyx0qELxMCioeYF1gr7UOHsyGfEljeFdIDGJMEqNzlgAf0xVc/Miu42EbKHjU4Ybjc7/jXtuJ1kiuIImKJpkZDuSCDg/mcHzHlT64dbqWdom0TW0KoqFdnJJJGT2G1HoczwupZOaJGDMq8vLbHGf7Yp9wuF73lxyKum1Idn05IznBz7DH31nn8VyzOoDP198/zetHwS+srfhzh3cXOCSOxPQAef+aydhQL/AFPZ2ENvLdc52nkQ6YcjbJ6+nc1m7OJuIS+FNMar4nA2UfvT3jXLvla5u8s0cWlcHSuR+tS/p6aGDhkKJFo5kQMmI85bG+aqlo3GxQeGOlqywcrCkDuCxPUdMVVOJJDDPcRSJyo1UFE8YOplAxt3XGfStDccRiDFBCox1LHJY9DsKASWOW/NwlxJAzqF1jGkEdD6dfWgrA0K7xEkuoYsQxlFVNKH6w2B3HU9/OhUtTb8YlG7ompPECD32x27UbxmOEvDDFE2pCTzFP2s7knHWqIrgC5GScsM5IzkkkZJNDkweyzhwF1Yy8OuAA4y8GfMdQD6iihbtHwGG2hBLpIzEMd9sZPy8qUXfxMbI8URV1YOG1ZOR/OlaxX5bQTtayOWTW0YONJxuM/PalbVBBrKzjnfSJbhyqfSFEXCt5Zzjt28q6qJr/4m7drMG2RPCyK/1mz9Y7da6k4oCieGcOkrRKrAbFSQvy2/npVOoXBV/oonQ6j1bTsfvP3UBdJJNxBLe2EksjnKpHjY+dUSTzTvJANKSJqLuDs4Hb86yhYjjug+6+Ct2N6S8pkIBKjSP7Y64q1ZormfkvLFLFIu6g/jS2Dn3FsImX4qONyjIGxv2IzXkVjM7abc8kMcFXHTzOfOjS9sBffMtvHynWKEn6roCdv3oexd0lUrcvImCWXGy52z1qd1HcR24iYpKjELnrg9d/3oWztZ1lKhcMBupP8ANqZaQyCeko8BZRkghulWSXORGIgD21EYIHlXNDlSGVgfMPtihbiKQThVBQLg+erfal0YYROY4ZGWYRysRqA8q9S/RrZI5OdI+rOsHbHTHt3pa8gmbRoZOmcnrTaG3gaCJZ5FRkjLAjBG5yOntW4r2FImXRrQsXYqBnTjNeCQSMqRYYKCPFscdqhAUjjLMCdW2FrmWGOeM4bWysNhsRt/OnesmkxumTfQHYI7uoGNTrjJ9qksOt1RUIYHB1CjXurc8KWF7bTKZBqdcgHFDfFPBcqY3Ox1HUBk+nzoOWwM6+tpBexRxfSoToEiA4LeWKvuY4LXU0cDsHgPL3O7DuT5Z22pjwfi0KaVvUVpCx+lVfqnqD9/f0o+8XhfE7GKNJAZIraRlCtg5GKZGox8SzGaRmt9QZCCFGQDg437+dRVoHtROgeORPBGytjV2waP5QsuKTxRyHRrUHTkau+R6dKEZNPCbXMJVVdSWIxqGcCs2ajUcHtUtY72GYR6FGtyhz4GHXJPb9KWTXKjh7SxXM3xLOwlOMBxgBcjsMDrUWeQzRaJAhWJoyO2nqcivGI5quUySozknScDH6CpTzxithvRVcsLjTJyljlH+4M7HbqKCS+0TBQWZBuwTC5/9v2phJJzMjZSdgcbCh5eFpFNFlXkWb/7C223baqYckJddmi7B7jjHxMklvBGqxIuWbr+Jorhl1DbW0UpEZ0xDJ1kb47mhLi3EcVwsahUh0/Z3Ynr+Y+/zqPBrAHMkxLIx1BWOcDqNq6kuTGei6KS2DGa6mWGJ2OlWJJk9fPTREotGiWa2VJlJwWQk/lUeIx80u9sUWTpg/4pdBwq9itbq8WYJIFyixjZj5mqVQtht5azkRcqUvHO2wcYIPXHsRUEtzdXYikQBYwQSMgg6s9O9LkvuIXi28El0S8koCcyPRoI3JBBOa0F7JovkZFUO2kMxG+TXPkjb0FAUFnHNonk8LLNlyWI0geVPLlhLaNy5Sm+MgCldshJuImC6i+oD8cUZao4t54pmX6Tp6GuRxabbDQkglSC7cqXZcHGw3zj9q6p3QuQwICKV8PgU5/m1dT8kKrI82awuNVtrZ3YqQDg6CM7H9KrniEKyytIC8i4LkYyPLHb76ZWcay2d5JrXEMIm3XOVAJNIuJs8lur6G5bsTtnYdvwp03YJL2QsZSZ0WGRI2bVI7Nv02xRcl7NE4heRZGI1Iy9G7HOf0pVDb6dRQshG2onzolYyYCSu7DfPYd96zSEoNW5jBZnVFyuH32OO59aGin1u58IfGRjv570LbPK8rKSulsjc4qJljRw4DB12A8/WtQRxNKjW0RZ8MckqPwqnniWQxsyqdAfU2RvvtQC3TQuJpAr5zjBziqGuWklVY9TkjAB6k+QFbgahw8MYTmkkuoyFGCW9fYVXbqwzrhLMOpzjr0o6x4NfyW6NcrHGMlsSPuv3dKb2XBra2Iklka4kA77LXLP5EIabCqF3Co+fkF1jQDc4JP3Cjv9MtDOGlvLl+Wulfo8AZ8tvShuDT8troYxkjH3mmRuWG539j0qOXPKMqQ8+7BjYWgDol0VLZ0h98/Kq5OG3CRrrVZACPqjJAohrpZBg4I/7hnFUmeSCQGGQrGfs6tic5+VbH8m/wBwE00DSwc9GzqGk7Krdh612oQmCJDIrsSMDGCcdzRxuoWTlXiyLno4XI/DegzZvMgks51lKsBv4WAPfB/euiOWP2AG1m3uNSuCYxlmbxHUK6XV8LHthQ6gk+/UfOrrmCQvEGQphsSZGQQR2I9qIihzbgzlQAwwudxjcfz0oyyJK0MkVyDladLFtJ3Y7nFRLMcghvkd6suFVxi2bVjYgkLVeS8YkVcZHWuWTbhbFaI/EKSV1NG3fO9MLS5TlNBI2tJDjJ7HzoMIhA15Hnp6mqpLm2CtHEnLlH1WL5HWjhvknFBhB9otuppnLLyWZom0upGMDtjz2/KlllxBIZmttJB3IPb2p+qx3MCTuv0gG/pkfl2rKTwNhmKkHdlYDp4iP0r2Mb2O0HXDM0o3KgncjtREd/dRTPaLPbNBEoI1gq2DsR60ji40bctDdQ8ztkHtUTdRTzRRWiyiSZizMxzo8sVViUN+ZHPxBJmI0wArDsBnfc++1MY7uK5k5ahWkO2D232rOmIiObMZ2YsV7owzkj0JqXCy9vOs920q4HMycFtu+KhNbsY1Nsqf6jca8BdKkajvuMb/AHUJdxSSShjJMq5ySuP16CgLqdricXdrFIdX2QMlwKnb3J5jO4MUibtrJ2z9kD965svJxDPSsb28hiGOY0u3XIP6b11LTcSL9aISE7jQ+kEdj+9dXD42IpgUE0sNjLECyFVMUwP/AE2qfE5mk4XbxPGI2iUAOBs4P60e9uyvembSzmNfEgwAMk9DSudpTZH6P6IeHUf/ABr0LC9oBt0lnaMMu/TTq6ev3UxW3luLeKdIxy8nWi9dIzsPXAPzNC8OEyyqqDIIJGlc7Dv702tLe75UWlDGundmOnrnNLOaitsVpIRXMXJef6PlE6dCNuV9M/n8qAEUks6rHks52CgsTWvk4TZswkvZ5pB/xXCg+W/WiLaeysRiztEjPTWPrH59a55fMjFUtitivh/9MXUrg34+HjGGyrAsfT096cfA8KsphLbWqc/Tp1nJ/M9fWoScSRzliQfTJqhpJS2Y2Yoe+ADXHPNkm9ujdhb3EgwTuB02qn4tpDpLYx36EVS0j48ILHzO2aHUuXLsQpB+wCB/elWNM3HeiVidLSHTnPzwc0TzX0bRge/ag7FogrFZHY/aGnYHPQedXSTojBVO5HQ71bLBuY847suyRhC2oDrtXSvDDExK5yM4XqTQ8UuQQxGT1yalCyTvy9mfOFNKo0xf+FFtcySDwswTHhJXf50e6uE0llwRnHSgrRzzTZyhlYEgBl2DZ/I1fduYmReWCOWDue9POFdCyXsskubhI2YSvIAPtdB7Eb0PA17xtpHtAVSM4JbIyapvpSvDImQhTnJCnzrSf0mqWvAY3l0q0pLsTt1NdfxsMXuYF/YhPDuORttHGQN9RqjiM9zw+BGWOIwyvpySc6t87VsbriVp8NLypo3l0nSo7msf/VMYtv6dsAuMmfUcNnqrV0+HE9JFY0K24g5B8Zx3x+VRF2ScFxnHlSzmZ3De1ThV5JEjjbUW7U3GKOjm0a7gN20rSW0hLYXK+ePL8aEaC7axt7vhrbxmTVC++QJGGc9987etX8Dshav8RJcqW0nYHGBirOGXNtFYRC4mCfSvlBjOCxx9/WkWRN0I97Eg+ln1rwZTcH6xIcL6EDOOmO1FR2a2lq1w4w0rkIIx9T0HkK1PMtCjtDOhCPpYA7g+VLVuYLuSSGJQdGGTP5U6cYvQgPDatHaMCupivTO/cVGysI+ITjmh8KRqToCB2PmKPlLBUUd13byA70NHdx4dwHiWR0ji1LjVv4j7U62zdDiYJBxbh5QaQdSY+W1Ccahhn4isqkRzIhGob5Pr+NAG61XsbatUUUgkV9W+M4+7avGM10raSitLlvpRqKj2PUZxUc0quP2Zq0UT3CWp+GkkZnUktiMMPkMmupZe82SYspVX6MxQYPsOwrqkkidGmkhK3JaSdSTGAwUbgAnc9qEU26oYow8kR7s2x7bY9PWh5ZhcLoRWW3Bz6zHzNekscKrbeQ2H71wznKqsVyfQRFKsG1tBHDhdI0k5x79cVLnhEaa4kdlQZA1EZbsKHjjd25a+Nu+dwvqaCvriOV0t4WDQxHLH/m1CEOW2YJa5LDXJkt1PlQ816RjlIAPOqJGbBGRn7O9UqrOdLudXfAqixR7ZqGdvI7YfC5zsScmrmmOpgXQdumMGgo4dcWlSwPchqqeykOPE7Y6nmdflW4QY6oPe5jiYmRyd8YbcVWeJWaJ/vbEYx5UB8A7YwTnO+a5eGFnGsA475p1DGuw8ootadrSDQjfXJ38qgLuaQYiTfz/zV4h53gI+ox2NGRwRRJqYE+WnemnkjH0NklToBt4L67caASR64ApvZWgtfErtkbyyDYHHb2r2G5hkUqqSoF2fT0Ne3h5ltojlXCjfT3+VT8lk7begTicyzW/MBxKp+t3xQtyZH0Tq7crlrn3FMDbMIjot1uDtgzHbz3oiOBpFlN8y20TgnRGR08z6D9KtaaR0LFBRubM3LPzLUW4zrLhUy2ep8qPknk5UNsxZxEumNQcKo8zRacPskfTayQSIdwxOX1Dyz0+VWz8Il5irrDKz6m23K7YHT+ZrSd6RDJDWmCWUcizB2JeR12DHGVyMkDsPx3oqV7PQsFxHBMuc8srkBvvyTVMdlci5lu5pFwBpREbfB6Ed6rZIraXU8UhkxsxfT67Cs40vxLY8LkqhRYeG8HiPPPDlY9SgLkZ/8c4r2yt+HyyNdNZ20Az4NKBScdcULbNcSXKpJJJCwBYh2xn8v2o64W54jBoAEbBQmpgcletJKLfbLy+Fq07PJuIcyQRQqmnBwAgJX2oC34hyFMUscfLBIBJBzknsarj4bePcmNCuAN3XYf5q62seczyaFE2vTGxP1SPT1zT41CKZDCnHTD5/6fk0ieC3kKsATymxn5dvlUlAjkUpGeYmcJ3z86Z2l7f2iHmKkgUdF7UQ3F7a+i0y2RfPd0z+dWUYvcX0aaaYkS5mjZpJAmDuCOi+dRvnE9zZpGkrDVrzpOMD1pnccNtZFJhLrt/t5wD8+oquSJLRRr1LGzYT7W/v5Uks7xu6sTkqFHwk0dmrOojyNDDuMtn8qquoJ3LO8qaox9UHQw752/h9KPlke44e8pDEIcE42HzqR4Y1sySXlpuo2DyZOO+3b5fhUJZnL8pIz60KJYpp3MphyTs2B3G3Q7eddTV4La6cXNzOIcjAQyMp+4GvKyzJegURQWjnC62x30nHlUimCVjiyBjIXI/SpNczm5VopFMGNRVBu5/ao3l7eRsyxwS6owfEw2PTOMHaprB/Z2/oILuRTcW95cQmIYt4iclYlxn0JoccL5SYdgo69QDVs3FYUwrNpkbBIGNhnzphzIZQhl3du/Zj6YozjJdMGT4cP4S/0VC2giP0kmrPVVGdqKNqixZiUhD1LELipTXHD45Ob9GHXsdyKMW6QQmfWmgrkA/VzS+OT7Ykfgr+UhY0SouI28PQkZxXqR+TAe9HJfRs3LkfEhwRp7g1N1cMNUiBDgKSu5P3VOcJIjn+Pwri7ARGvZhnzFS5eRhRg9jR8hWJjh28PUKOvvVCXEdwgMcjL3OV3/t7elGGOT7BD41+wCz5fxjpMpDZz5d+9GH4kyyW8Fu5QbrITsf/AG8qrkgXLSPIwZiA2NsnzqK33LuZYOY6xqoKIxyFH/I53x710ZW4r8UXyzjGKpbDXtJ30MIidRIcNgHrs3fGa5bK4UYQojfYZGzt/M0Fb3D3EMslxKCoOCF8GD5jG+9UtdGRZBb3MnMijJC7Ouoehrl5ZG/RyyyORK6vri0mSK5kaJSMuNW+n08+nnQ8vEJriNkMhEbMA2o7keWB71feTG84ImgxprGpfkegJ6UhvYrrhzaETRk9xnPrXZhfNb0xeLasYiWziEXxTSNca/DofTtsOw2OM0fEySuFj+qNzpYsCcHrvg/MZrLGZgF1A4OxXrmibad84hACkk/V1ZPt086u4CVRoD4rofTEvhkcLnSNiRt0HTtRJTnRmJyjwkZRHXJPTP44rNwXr200Lk60aTSUzhRvv4e5x37ZrRxC3kWTVFE0ifb0ZJz0OetLJF8UWUx/DSc7n2scB2XWNmcde21eXfE0iiVbXMZGCrHLEn1BpmttFMhLx6tsbE5/CotAseESFVA22LZ+/Oalwvs6JJNU5MXtxe/LsxhwiKA/gOQe9DW17NbJcBGZMMWwBnJIp2quCFWIovXpny88+VCWEalbrKKSs7DJHTYUyhFLQjxY+k2AWnE+IEgcqQuDh2ZDg9/yqu4m4tMzQ8qUqhI1JgA09aFJI9LQwED7JQEe+MV2kKwZI4htjAjH7UUorpGWPGtOzPC44xHjW2lmGI9Rzqz2o+0/qQ/ApFOGlcrh0VNe42IpoNRIbUPCcjoMGvRI4O0nXrg5opJO0Dx41+0TCd54Hto4JorZMvGhjKou4x1FGSLxK/g5F0hkhZRpZiAQf+QPWibpnazlGpmBGcbVC3EfIibKEMoxnvQdfRSLS9FUvBreXHxfJbAAXVISQK9q/wCItVOFmQe7YzXUvOg+RfSM/Y3M100EcbLEQgZFXYah09qqvrqV3FvCCdzmTJGB2FWcKlWXiEarFu0Tgjtjbp91HW/DWnupg0iL4hhJM7j0PQVWdJWyUcs67Bk58/0EsbPrABbqWJOwB69TR1jEibJAqvnS7YO2Mft+VE2yXEFwXhjjaWFToDnG/Tb13qqPhVxHzA11rkXBIV8rg7jJ6d6jzjexvI1KyQsIGVjLAhJ6nRvVa8Ji1jCjSOgG3zxRdvIOXh1Hh2OfOi4MsDk4A6ZP41akbkwdLFgmA2kEbjFVuJUkxHMQR1QHqKObQNnJB9AaXzJ4jjAHt1o0mBkT/ueFmUdT4jiiP/ztK5ydzvuaCe1kkjV43cMSDs2ABVxh5cZyzvgZB1fiai1spDSAr8n4HTnALbYONv3pVccRklb4cXSRZxuq/V96a8QYHh4ckdF369RWaa4t5CFki1K56psc+XTp7VScFLZHKrCS8VvaSWtuzTnp4yFPuPwqvgsqW0plRibt9QCk7e3v1oeWObnFYIfoshjysswx69atC3mEkgtiZTuxKnUNvWlcVxp+znCouIoebqhkMIOpl/6ffr880bPf2kiIUPMG+RnoaFbgk1xPzOS6at2G5JPfbrR0XBkUAlSR+VScscVoeOXh0CE2t7fSRwRhiVJUYGcgdqVi0uFvOWLd2y2Ap69f5vWrCi1tmS25a9tTINIPl7+lWRPNNqjkVGDLh5ASOvYelOs/GNoEp8t0ZKe2nmuoo4ElkSI41EbHfc+2a07N8PKBIwDPGAQTmj5LaMHTCSuw2xjNVraRnLNv/wB2c/jUX8q/QY5HEMheMWwBZT2OWFUG+gT7W58iDn2qoWsJOQD89qvit4iQBHuc4ztsPxpf1PqjeW/RKOVJdJVGBYFsNkEGhoLe4jE5hMcmZSxycEbd6PjWDxRknUPL+9dHbCJn5ZZwTk57Ur+ROrF8sgNfj3JLCNR71JobpjnWoz571c0rxyFeWSo6nPSr4oyRhwNQGogHpUnnn6B5JAPwtyd2nC/+uc17/p0jKS12+/8AxwMUfpVcFnQA9D2qJyrkZyB5DNTeXJ7A5yA34escLyc2Viik7uarsOH20tpFK8epmB3NHTNm1lGDuh7UNwyUf6fEBvjI/Gn5y8T37DyfEvWzt1GBCo91FdVgZSM7GuqHKQls/9k=" alt="Chikmagalur Peak">
+            <span class="card-tag">Mullayanagiri Peak</span>
+          </div>
+          <div class="card-body">
+            <h3>Chikmagalur</h3>
+            <p>The birthplace of Indian coffee, featuring Karnataka's highest mountain peak.</p>
+            <div class="card-footer">
+              <span><i class="fa-solid fa-location-dot"></i> Chikmagalur</span>
+              <button class="detail-btn" onclick="openModal('Chikmagalur', 'Home to Mullayanagiri peak (1,930m), Baba Budangiri hills, coffee museum, and scenic mountain jeep rides.', 'September to March', 'Direct buses from Bengaluru (240 km)')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-name="nandi hills bangalore sunrise point">
+          <div class="card-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxcpoa-EKZ1D504Zy8hyh0RCYgzlul8jZi_I8pUO3rLg&s=10" alt="Nandi Hills">
+            <span class="card-tag">Sunrise Spot</span>
+          </div>
+          <div class="card-body">
+            <h3>Nandi Hills</h3>
+            <p>Historic hilltop fortress popular for scenic early morning fog views and bike rides.</p>
+            <div class="card-footer">
+              <span><i class="fa-solid fa-location-dot"></i> Chikkaballapur</span>
+              <button class="detail-btn" onclick="openModal('Nandi Hills', 'Ancient hill fortress featuring Tipu Sultan drop point, Bhoga Nandeeshwara Temple, and popular early morning cloud-watch points.', 'Year-round (Early mornings)', '60 km drive from Bengaluru center')">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Famous Food -->
+  <section class="section container" id="food">
+    <div class="section-title">
+      <h2>Famous Karnataka Cuisine</h2>
+      <p>Savor authentic flavors from coastal fish curry to royal sweets</p>
+    </div>
+    <div class="grid-container">
+      <div class="food-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVUSi3kv3y-BQuISrIOzKczhNy7MnttCQIJbQoV8kEWQ&s=10" alt="Mascara Masala Dosa">
+        <div class="food-info">
+          <h3>Mysore Masala Dosa</h3>
+          <p>Crispy golden rice crepe slathered with spicy red garlic chutney and stuffed with seasoned potato filling.</p>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJMjNg6mHj1wDwc07LVpx2CcAPGyzMUZJI96q7FT5EA&s=10" alt="Bisi Bele Bath">
+        <div class="food-info">
+          <h3>Bisi Bele Bath</h3>
+          <p>A comforting hot dish made with rice, lentils, vegetables, ghee, cashew, and aromatic ground spice blend.</p>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT8i5HSi-Iq5aipar2lOAMe9ZfEuni4KXe-__RS87S2w&s=10" alt="Mysore Pak">
+        <div class="food-info">
+          <h3>Mysore Pak</h3>
+          <p>Rich, melt-in-the-mouth traditional dessert made from pure ghee, roasted gram flour, and cardamom sugar syrup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section bg-light" id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>Photo Gallery</h2>
+        <p>Glimpses of vibrant landscapes, temples, and wildlife</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEIQrNF25jNlYVAaS1BDyAZOKx7Q5ZcG6kZLmBVCbnqg&s=10" alt="Mysore Palace Lights"></div>
+        <div class="gallery-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE-k7kxOpbd8nXlThc_XPUwVGiCRij4m5Av2S7DtUaLQ&s=10" alt="Hampi Ruins"></div>
+        <div class="gallery-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKfwVFGg4IPt_qelS1yrm7pOoMpgemxypQxvyT5bQ2uA&s=10" alt="Coorg Plantation"></div>
+        <div class="gallery-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxbSBWWXOm0Jwgu3ICin96VwKQucFp_KwPKDOeeJAoyA&s=10" alt="Jog Falls Monsoon"></div>
+        <div class="gallery-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXcvjE3pA8lcCyf6we1SQ64B7azVdbpbLidupj4fyjYA&s=10" alt="Gokarna Sunset"></div>
+        <div class="gallery-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzNMvEfqs73RLoKsCPlhDcMxl80fKFLlcoPeXiwdW1CA&s=10" alt="Badami Red Cliffs"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Information & Calculator -->
+  <section class="section container" id="travel-info">
+    <div class="section-title">
+      <h2>Travel Information & Budget Estimator</h2>
+      <p>Plan your trip effortlessly with instant cost estimates</p>
+    </div>
+    
+    <div class="travel-wrapper">
+      <div class="info-boxes">
+        <div class="info-box">
+          <i class="fa-solid fa-plane-arrival"></i>
+          <div>
+            <h4>How to Reach</h4>
+            <p><strong>Air:</strong> Kempegowda Intl Airport (BLR), Mangaluru (IXE).</p>
+            <p><strong>Rail:</strong> Well connected via KSR Bengaluru & Hubballi junctions.</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <i class="fa-solid fa-calendar-check"></i>
+          <div>
+            <h4>Best Time to Visit</h4>
+            <p><strong>October to March:</strong> Pleasant weather for sightseeing and heritage tours.</p>
+            <p><strong>July to September:</strong> Perfect for viewing roaring waterfalls in monsoon.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Trip Cost Calculator -->
+      <div class="planner-card">
+        <h3><i class="fa-solid fa-calculator"></i> Quick Trip Estimator</h3>
+        
+        <div class="input-group">
+          <label for="calcDays">Trip Duration (Days)</label>
+          <input type="number" id="calcDays" value="3" min="1" max="15" />
+        </div>
+
+        <div class="input-group">
+          <label for="calcPeople">Number of Travelers</label>
+          <input type="number" id="calcPeople" value="2" min="1" max="10" />
+        </div>
+
+        <div class="input-group">
+          <label for="calcStyle">Travel Style</label>
+          <select id="calcStyle">
+            <option value="1500">Budget (Homestays + Local Transport)</option>
+            <option value="3500" selected>Standard (3-Star Hotels + Private Cabs)</option>
+            <option value="7000">Luxury (Resorts + Private Guides)</option>
+          </select>
+        </div>
+
+        <button id="calculateBtn" class="calc-btn">Estimate Total Budget</button>
+        <div class="result-box" id="resultBox">
+          Estimated Total: <span id="budgetOutput">₹0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Popup Modal -->
+  <div class="modal-backdrop" id="infoModal">
+    <div class="modal">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle">Destination Title</h3>
+      <p id="modalDesc">Detailed overview will appear here...</p>
+      <div class="modal-meta">
+        <div><strong><i class="fa-solid fa-cloud-sun"></i> Best Season:</strong> <span id="modalSeason">-</span></div>
+        <div><strong><i class="fa-solid fa-route"></i> Access:</strong> <span id="modalAccess">-</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="logo"><i class="fa-solid fa-archway"></i> Namma<span>Karnataka</span></div>
+      <p>© 2026 Karnataka Tourism Guide. Designed with passion for heritage & nature.</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,762 @@
+/* ==========================================================================
+   Karnataka Theme Variables & Color Palette
+   ========================================================================== */
+:root {
+  --karnataka-yellow: #ffd700;
+  --karnataka-red: #d32f2f;
+  --accent-gold: #f59e0b;
+  --accent-teal: #06b6d4;
+  --accent-purple: #8b5cf6;
+  
+  --text-main: #ffffff;
+  --text-muted: #e2e8f0;
+  --card-bg: rgba(15, 23, 42, 0.88); /* Glassmorphic Slate for contrast */
+  --radius: 16px;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   Karnataka Flag Background (Yellow & Red Bicolor with Subtle Tint)
+   ========================================================================== */
+body {
+  /* Direct depiction of Karnataka Flag: Top 50% Yellow (#ffd700), Bottom 50% Red (#d32f2f) */
+  background: 
+    linear-gradient(rgba(11, 15, 25, 0.65), rgba(11, 15, 25, 0.70)), /* Dark tint overlay for readability */
+    linear-gradient(to bottom, #ffd700 0%, #ffd700 50%, #d32f2f 50%, #d32f2f 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Utilities */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.bg-light {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(12px);
+  border-top: 2px solid var(--karnataka-yellow);
+  border-bottom: 2px solid var(--karnataka-red);
+}
+
+/* ==========================================================================
+   Animated Colorful Headings
+   ========================================================================== */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffd700, #ffffff, #ff7b7b, #ffd700);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+  display: inline-block;
+  animation: gradientShift 6s ease infinite, fadeInDown 0.8s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.section-title h2:hover {
+  transform: scale(1.03);
+}
+
+.section-title h2::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 70%;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, var(--karnataka-yellow), var(--karnataka-red));
+  border-radius: 4px;
+  animation: expandGlow 2.5s ease-in-out infinite alternate;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+}
+
+/* Keyframe Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandGlow {
+  0% { width: 50px; box-shadow: 0 0 5px rgba(255, 215, 0, 0.6); }
+  100% { width: 120px; box-shadow: 0 0 15px rgba(211, 47, 47, 0.9); }
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5%;
+  background: rgba(11, 15, 25, 0.95);
+  backdrop-filter: blur(14px);
+  z-index: 1000;
+  border-bottom: 3px solid var(--karnataka-yellow);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.logo i {
+  color: var(--karnataka-yellow);
+  margin-right: 6px;
+}
+
+.logo span {
+  color: var(--karnataka-yellow);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+}
+
+.nav-links a {
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  background: var(--karnataka-yellow);
+  color: #0b0f19;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+}
+
+.menu-toggle {
+  display: none;
+  color: #ffffff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1600100397608-f090746fa877?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(211, 47, 47, 0.45), rgba(11, 15, 25, 0.88));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  color: #ffffff;
+}
+
+.badge {
+  background: rgba(255, 215, 0, 0.25);
+  border: 1.5px solid var(--karnataka-yellow);
+  color: var(--karnataka-yellow);
+  padding: 8px 22px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.hero-content h1 {
+  font-size: 3.8rem;
+  margin: 20px 0 15px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.hero-content h1 span {
+  color: var(--karnataka-yellow);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  margin-bottom: 35px;
+}
+
+/* Hero Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.95);
+  padding: 8px 10px 8px 22px;
+  border-radius: 50px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  max-width: 620px;
+  margin: 0 auto;
+  border: 2px solid var(--karnataka-yellow);
+}
+
+.search-bar i {
+  color: var(--karnataka-yellow);
+  font-size: 1.2rem;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  width: 100%;
+  font-size: 1.05rem;
+  background: transparent;
+  color: #ffffff;
+}
+
+.search-bar input::placeholder {
+  color: #94a3b8;
+}
+
+.search-bar button {
+  background: linear-gradient(135deg, var(--karnataka-yellow), #f59e0b);
+  color: #0b0f19;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.search-bar button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+/* ==========================================================================
+   Card Grids & Strict Image Alignment
+   ========================================================================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--karnataka-yellow);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Container Alignment */
+.card-img {
+  position: relative;
+  height: 230px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1e293b;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+.card-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(11, 15, 25, 0.88);
+  border: 1px solid var(--karnataka-yellow);
+  color: var(--karnataka-yellow);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 1.35rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.card-footer i {
+  color: var(--karnataka-yellow);
+}
+
+.detail-btn {
+  background: transparent;
+  border: 1.5px solid var(--karnataka-yellow);
+  color: var(--karnataka-yellow);
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.detail-btn:hover {
+  background: var(--karnataka-yellow);
+  color: #0b0f19;
+}
+
+/* ==========================================================================
+   Food Cards & Alignment
+   ========================================================================== */
+.food-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: var(--transition);
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--karnataka-red);
+}
+
+.food-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.food-info {
+  padding: 22px;
+}
+
+.food-info h3 {
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.food-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Gallery Grid & Alignment
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  height: 240px;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--karnataka-yellow);
+  position: relative;
+  background-color: #1e293b;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.12);
+}
+
+/* ==========================================================================
+   Travel Info & Budget Calculator
+   ========================================================================== */
+.travel-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.info-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--card-bg);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--karnataka-yellow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-box i {
+  font-size: 2.2rem;
+  color: var(--karnataka-yellow);
+}
+
+.info-box h4 {
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.info-box p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.planner-card {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.planner-card h3 {
+  margin-bottom: 22px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.35rem;
+}
+
+.planner-card h3 i {
+  color: var(--karnataka-yellow);
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #e2e8f0;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px 16px;
+  background: #0b0f19;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+  outline: none;
+  transition: var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--karnataka-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+.calc-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--karnataka-yellow), #f59e0b);
+  color: #0b0f19;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 10px;
+}
+
+.calc-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 16px;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px dashed var(--karnataka-yellow);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 700;
+  color: #fef08a;
+}
+
+.result-box span {
+  font-size: 1.4rem;
+  color: var(--karnataka-yellow);
+  font-weight: 900;
+}
+
+/* ==========================================================================
+   Popup Modal
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 15, 25, 0.88);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal {
+  background: #0f172a;
+  padding: 35px;
+  border-radius: var(--radius);
+  border: 2px solid var(--karnataka-yellow);
+  max-width: 550px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--karnataka-yellow);
+}
+
+.modal h3 {
+  color: #ffffff;
+  font-size: 1.75rem;
+  margin-bottom: 12px;
+}
+
+.modal p {
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.modal-meta {
+  background: #0b0f19;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.98rem;
+  color: #e2e8f0;
+}
+
+.modal-meta i {
+  color: var(--karnataka-yellow);
+  margin-right: 6px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  background: #070a14;
+  color: var(--text-muted);
+  padding: 45px 0;
+  text-align: center;
+  border-top: 3px solid var(--karnataka-yellow);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socials a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.socials a:hover {
+  background: var(--karnataka-yellow);
+  color: #0b0f19;
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(11, 15, 25, 0.98);
+    flex-direction: column;
+    padding: 20px 5%;
+    gap: 15px;
+    display: none;
+    border-bottom: 3px solid var(--karnataka-yellow);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-title h2 {
+    font-size: 2.1rem;
+  }
+
+  .travel-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .search-bar button {
+    width: 100%;
+    border-radius: 12px;
+  }
+}
